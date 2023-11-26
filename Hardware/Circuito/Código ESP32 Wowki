@@ -1,0 +1,59 @@
+cpp
+#include <ESP32Servo.h>
+
+Servo servo_1;
+Servo servo_2;
+Servo servo_3;
+Servo servo_4;
+Servo servo_5;
+Servo servo_6;
+
+void setup()
+{
+  servo_1.attach(2, 500, 2500);
+  servo_2.attach(4, 500, 2500);
+  servo_3.attach(5, 500, 2500);
+  servo_4.attach(18, 500, 2500);
+  servo_5.attach(19, 500, 2500);
+  servo_6.attach(21, 500, 2500);
+
+  servo_1.write(0);
+  servo_2.write(0);
+  servo_3.write(0);
+  servo_4.write(0);
+  servo_5.write(0);
+  servo_6.write(0);
+}
+
+void loop()
+{
+  servo_1.write(90);
+  delay(1000);
+  servo_1.write(0);
+  delay(1000);
+
+  servo_2.write(90);
+  delay(1000);
+  servo_2.write(0);
+  delay(1000);
+
+  servo_3.write(90);
+  delay(1000);
+  servo_3.write(0);
+  delay(1000);
+
+  servo_4.write(90);
+  delay(1000);
+  servo_4.write(0);
+  delay(1000);
+
+  servo_5.write(90);
+  delay(1000);
+  servo_5.write(0);
+  delay(1000);
+
+  servo_6.write(90);
+  delay(1000);
+  servo_6.write(0);
+  delay(1000);
+}
