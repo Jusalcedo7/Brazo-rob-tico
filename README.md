@@ -1,2 +1,2 @@
 # ARM UNAL (Brazo Robótico)
-Se irá actualizando el proyecto sobre el brazo robótico
+¿Quieres aprender sobre electrónica básica y construir un robot con 6 grados de libertad? Entonces, te invitamos a participar en el proyecto ARM UNAL, una iniciativa que busca fomentar el aprendizaje seguro y divertido de la robótica. Con ARM UNAL, podrás crear un robot que no se basa en los diseños tradicionales, sino que te ofrece la posibilidad de realizar tareas con un alto nivel de riesgo y complejidad, mientras adquieres nuevos conocimientos y habilidades. ARM UNAL es un proyecto para los amantes de la tecnología, la innovación y el reto. ¿Te animas a unirte?
