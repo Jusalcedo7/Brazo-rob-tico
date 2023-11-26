@@ -2,28 +2,13 @@ import socket
 from servo import Servo
 from time import sleep
 
-'''
-motor = Servo(pin=2)
-while True:
-    motor.move(0)
-    sleep(1)
-    motor.move(90)
-    sleep(1)
-    motor.move(180)
-    sleep(1)
-    motor.move(90)
-    sleep(1)
-    motor.move(0)
-    sleep(1)
-    
 garra = Servo(pin=2)
-muñeca_pitch = Servo(pin=4)
-muñeca_yaw = Servo(pin=25)
-brazo = Servo(pin=26)
-antebrazo = Servo(pin=#)
-base = Servo(pin=#)
-'''
-
+muñeca_p = Servo(pin=4)
+muñeca_y = Servo(pin=5)
+brazo = Servo(pin=18)
+antebrazo = Servo(pin=19)
+base = Servo(pin=21)
+             
 # Agregar nport de donde está el servidor TCP, en el ejemplo: 3000
 serverAddressPort = socket.getaddrinfo('0.0.0.0', 3000)[0][-1]
 # Cantidad de bytes a recibir
@@ -50,20 +35,27 @@ def degrades_servo(data):
 
 def exec(data):
     print(data)
-    if identifier_servo(data) == "s7":
+    g = int(degrades_servo(data))
+    if identifier_servo(data) == "s1":
         print(degrades_servo(data))
-    elif identifier_servo(data) == "s6":
-        print(degrades_servo(data))
-    elif identifier_servo(data) == "s5":
-        print(degrades_servo(data))
-    elif identifier_servo(data) == "s4":
-        print(degrades_servo(data))
+        garra.move(g)
     elif identifier_servo(data) == "s2":
         print(degrades_servo(data))
-    elif identifier_servo(data) == "s1":
+        muñeca_p.move(g)
+    elif identifier_servo(data) == "s3":
         print(degrades_servo(data))
+        muñeca_y.move(g)
+    elif identifier_servo(data) == "s4":
+        print(degrades_servo(data))
+        brazo.move(g)
+    elif identifier_servo(data) == "s5":
+        print(degrades_servo(data))
+        antebrazo.move(g)
+    elif identifier_servo(data) == "s6":
+        print(degrades_servo(data))
+        base.move(g)
     else:
-        print("Otro")
+        print("Unknow data")
 
 sk = socket.socket()
 sk.bind(serverAddressPort)
